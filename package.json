@@ -1,0 +1,54 @@
+{
+  "author": " <acortez.dev@gmail.com>",
+  "bugs": {
+    "url": "https://github.com/zikeron/portfolio/issues"
+  },
+  "dependencies": {
+    "@babel/core": "^7.11.0",
+    "@babel/preset-env": "^7.11.0",
+    "@babel/preset-react": "^7.10.4",
+    "babel-loader": "^8.1.0",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.10.2"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.3",
+    "css-loader": "^3.4.2",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb": "^17.1.1",
+    "eslint-config-prettier": "^4.3.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-jest": "^23.6.0",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-react": "^7.18.2",
+    "file-loader": "^5.0.2",
+    "mini-css-extract-plugin": "^0.7.0",
+    "prettier": "^1.19.1"
+  },
+  "description": "React web developer portfolio",
+  "homepage": "https://github.com/zikeron/portfolio#readme",
+  "keywords": [
+    "React",
+    "Javascript"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "name": "portfolio",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zikeron/portfolio.git"
+  },
+  "scripts": {
+    "build": "webpack --mode production",
+    "format": "prettier --write '{*.js,src/**/*.{js,jsx}}'",
+    "lint": "eslint src/ --fix",
+    "start": "webpack-dev-server --open --mode development"
+  },
+  "version": "1.0.0"
+}
