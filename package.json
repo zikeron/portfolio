@@ -1,5 +1,5 @@
 {
-  "author": " <acortez.dev@gmail.com>",
+  "author": "Alejandro Cortez <acortez.dev@gmail.com>",
   "bugs": {
     "url": "https://github.com/zikeron/portfolio/issues"
   },
@@ -8,6 +8,7 @@
     "@babel/preset-env": "^7.11.0",
     "@babel/preset-react": "^7.10.4",
     "babel-loader": "^8.1.0",
+    "css-loader": "^3.4.2",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
     "react": "^16.13.1",
@@ -18,7 +19,6 @@
   },
   "devDependencies": {
     "babel-eslint": "^10.0.3",
-    "css-loader": "^3.4.2",
     "eslint": "^5.16.0",
     "eslint-config-airbnb": "^17.1.1",
     "eslint-config-prettier": "^4.3.0",
@@ -29,7 +29,9 @@
     "eslint-plugin-react": "^7.18.2",
     "file-loader": "^5.0.2",
     "mini-css-extract-plugin": "^0.7.0",
-    "prettier": "^1.19.1"
+    "prettier": "^1.19.1",
+    "stylus": "^0.54.8",
+    "stylus-loader": "^3.0.2"
   },
   "description": "React web developer portfolio",
   "homepage": "https://github.com/zikeron/portfolio#readme",
