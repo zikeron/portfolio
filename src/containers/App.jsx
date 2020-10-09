@@ -1,11 +1,12 @@
 import React from 'react';
-import { Header } from '../components/Header/Header';
 import { Layout } from '../components/Layout/Layout';
+import { About } from '../components/About/About';
+import { Skills } from '../components/Skills/Skills';
+import { Experience } from '../components/Experience/Experience';
 
 export const App = () => {
   return (
     <>
-      <Header />
       <Layout />
     </>
   );

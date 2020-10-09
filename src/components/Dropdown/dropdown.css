@@ -1,0 +1,14 @@
+.dropdown__parent-container {
+    display: grid;
+    grid-template-columns: 25% 50% 25%;
+}
+
+.dropdown__parent-container p {
+    text-align: center;
+}
+
+.dropdown__child-item {
+    height: 100px;
+    border: 1px solid red;
+    width: inherit;
+}

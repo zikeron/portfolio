@@ -1,9 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 body {
-    background: #F5F5F5;
+    background: #eeeeee;
     font-family: 'Nunito', sans-serif;
     font-size: 16px;
     margin: 0;
     padding: 0;
+}
+
+
+#app {
+
 }

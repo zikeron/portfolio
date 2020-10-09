@@ -1,29 +1,27 @@
 import React from 'react';
+import { Profile } from '../Profile/Profile';
+import { Nav } from '../Nav/Nav';
 import './layout.css';
+import { Modal } from '../Modal/Modal';
 
 export const Layout = () => {
   return (
     <section>
+      <Modal />
       <div className="container">
-        <div className="item item-about">
-          <h3>About Me!</h3>
-          <p> Hi there 👋 </p>
-          <p>
-            {' '}
-            I'm Alejandro, Full-Stack developer with 6 years of experience in
-            web application development using PHP & NodeJS language to develop
-            back-end and 3 years of experience in the front-end, using
-            technologies such as Angular, Vue JS, React. Currently, I am looking
-            for job opportunities that will support me in continuing my
-            professional growth.
-          </p>
+        <div className="profile">
+          <Profile />
         </div>
-        <div className="item item-experience">
-          <h3>Experience</h3>
-          <p>More details...</p>
+        <div className="navigation">
+          <Nav />
         </div>
-        <div className="item item-skills">
-          <h3>Skills</h3>
+        <div className="footer">
+          <div className="footer__container">
+            <p>
+              MADE WITH ❤️ BY ALEJANDRO CORTEZ A.K.A ZIKER{' '}
+              {new Date().getFullYear()}
+            </p>
+          </div>
         </div>
       </div>
     </section>

@@ -1,0 +1,53 @@
+.profile {
+    grid-area: profile;
+    height: 100%;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+}
+
+.profile__container {
+    align-content: center;
+}
+
+.profile__container figure {
+    display: flex;
+    justify-content: center;
+}
+
+.profile__img {
+    border-radius: 50%;
+    border: 8px solid #e8e8e8;;
+    height: 150px;
+}
+
+.profile__container-title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 48px;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.profile__container p {
+    font-size: 16px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    margin: 16px 0 16px 0;
+    padding: 16px;
+    text-align: center;
+}
+
+
+@media only screen and (min-device-width: 768px) {
+    .profile__container p {
+        font-size: 14px;
+        font-weight: 300;
+        margin: 12px 0 12px 0;
+        padding: 12px;
+        text-align: center;
+    }
+}
+
+@media only screen and (min-device-width: 1024px) {
+
+}
