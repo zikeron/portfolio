@@ -1,27 +1,54 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Modal } from '../Modal/Modal';
 import { Profile } from '../Profile/Profile';
 import { Nav } from '../Nav/Nav';
+import { Footer } from '../Footer/Footer';
+import { About } from '../About/About';
+import { Skills } from '../Skills/Skills';
+import { Experience } from '../Experience/Experience';
+import { Contact } from '../Contact/Contact';
 import './layout.css';
-import { Modal } from '../Modal/Modal';
 
 export const Layout = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [contentModal, setContentModal] = useState(false);
+  const [headerContent, setHeaderContent] = useState(false);
+
+  const renderContent = () => {
+    switch (contentModal) {
+      case 'About':
+        return <About />;
+      case 'Skills':
+        return <Skills />;
+      case 'Experience':
+        return <Experience />;
+      case 'Contact':
+        return <Contact />;
+    }
+  };
+
   return (
     <section>
-      <Modal />
+      {isModalOpen && (
+        <Modal name={headerContent} handleClick={() => setIsModalOpen(false)}>
+          {renderContent()}
+        </Modal>
+      )}
       <div className="container">
         <div className="profile">
           <Profile />
         </div>
         <div className="navigation">
-          <Nav />
+          <Nav
+            handlers={{
+              modalOpen: () => setIsModalOpen(true),
+              contentModal: setContentModal,
+              headerContent: setHeaderContent,
+            }}
+          />
         </div>
         <div className="footer">
-          <div className="footer__container">
-            <p>
-              MADE WITH ❤️ BY ALEJANDRO CORTEZ A.K.A ZIKER{' '}
-              {new Date().getFullYear()}
-            </p>
-          </div>
+          <Footer />
         </div>
       </div>
     </section>

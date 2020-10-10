@@ -1,0 +1,14 @@
+.footer {
+    grid-area: footer;
+}
+
+.footer__container {
+    display: flex;
+    justify-content: center;
+}
+
+.footer__container p {
+    font-size: 11px;
+    font-weight: 300;
+    text-align: center;
+}

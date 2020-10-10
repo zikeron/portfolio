@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './modal.css';
 
-export const Modal = ({ name = 'modal', children }) => {
+export const Modal = ({ name = 'modal', children, handleClick }) => {
   return (
     <div className="modal">
       <div className="modal__header">
@@ -9,7 +9,7 @@ export const Modal = ({ name = 'modal', children }) => {
           <p>{name}</p>
         </div>
         <div className="modal__header-close">
-          <p>&times;</p>
+          <p onClick={handleClick}>&times;</p>
         </div>
       </div>
       <div className="modal__container">{children}</div>
