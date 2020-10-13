@@ -51,7 +51,6 @@ const experience = [
 export const Experience = () => {
   return (
     <section>
-      <h3>Experience</h3>
       {experience.map(job => {
         return (
           <section key={job.id}>

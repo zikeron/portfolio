@@ -1,8 +1,8 @@
 .profile {
+    border-top: 2px solid #e8e8e8;
+    border-bottom: 2px solid #e8e8e8;
     grid-area: profile;
     height: 100%;
-    border-top: 2px solid black;
-    border-bottom: 2px solid black;
 }
 
 .profile__container {
@@ -37,6 +37,12 @@
     text-align: center;
 }
 
+@media only screen and (max-device-width: 450px) {
+    .profile {
+        margin: 0 auto;
+        width: 85%;
+    }
+}
 
 @media only screen and (min-device-width: 768px) {
     .profile__container p {

@@ -12,3 +12,9 @@
     font-weight: 300;
     text-align: center;
 }
+
+@media only screen and (max-device-width: 400px) {
+    .footer__container p {
+        padding: 0 24px 0 24px;
+    }
+}
