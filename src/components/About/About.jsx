@@ -5,7 +5,6 @@ export const About = () => {
   return (
     <section>
       <div className="container__about">
-        <h3>About Me!</h3>
         <p> Hi there 👋 </p>
         <p>
           {' '}

@@ -1,4 +1,8 @@
 import React from 'react';
+import clarodriveImg from '../../assets/clarodrive.png';
+import telasistImg from '../../assets/telasist.png';
+import ikeImg from '../../assets/ike-asistencia.png';
+import './experience.css';
 
 const experience = [
   {
@@ -8,6 +12,8 @@ const experience = [
     startAt: '08/2018',
     endAt: '',
     location: 'Mexico City, Mexico',
+    img: clarodriveImg,
+    url: 'https://www.clarodrive.com/',
     tasks: [
       'Build APIs and Services using NodeJS and PHP with different frameworks such as Lumen, Slim, Codeigniter.',
       'Develop and support from many Angular v8 apps built in-house.',
@@ -24,6 +30,8 @@ const experience = [
     startAt: '02/2017',
     endAt: '07/2018',
     location: 'Mexico City, Mexico',
+    img: telasistImg,
+    url: 'https://telasist.com/',
     tasks: [
       "Developed a survey management system using Laravel 5.6 and VueJS v.2 to show a KPI's charts board.",
       'Built modules using ZendFramework for a service operation in-house system. Affiliate management information analysis collection.',
@@ -38,9 +46,11 @@ const experience = [
     startAt: '05/2015',
     endAt: '01/2017',
     location: 'Mexico City, Mexico',
+    img: ikeImg,
+    url: 'https://ikeasistencia.com/',
     tasks: [
       'Building PHP modules for an ERP in-house system.',
-      'Improving database design to reduce query processing time. (MySQL, MSSQ',
+      'Improving database design to reduce query processing time. (MySQL, MSSQL).',
       'Planning requirements analysis.',
       'Improving performance of development & production servers.',
       'Migration of site-wide front-end from HTML to Jquery & Bootstrap v.3.',
@@ -53,21 +63,38 @@ export const Experience = () => {
     <section>
       {experience.map(job => {
         return (
-          <section key={job.id}>
-            <div>Postion: {job.position}</div>
-            <div>Company: {job.company}</div>
-            <div>
-              Period: {job.startAt} -{' '}
-              {job.endAt === '' ? 'Still Working' : job.endAt}
+          <article key={job.id}>
+            <div className="experience__container">
+              <div className="experience__container_img">
+                <figure>
+                  <img
+                    className="experience__job-img"
+                    src={job.img}
+                    alt="Clarodrive"
+                  />
+                </figure>
+              </div>
+              <div className="experience__container-job">
+                <div>
+                  Company: <a href={job.url}>{job.company}</a>
+                </div>
+                <div>Position: {job.position}</div>
+                <div>
+                  Period: {job.startAt} -{' '}
+                  {job.endAt === '' ? 'Still Working' : job.endAt}
+                </div>
+                <div>Location: {job.location}</div>
+              </div>
+              <div className="experience__container-task">
+                <div>Tasks:</div>
+                <ul>
+                  {job.tasks.map((task, index) => (
+                    <li key={index}>{task}</li>
+                  ))}
+                </ul>
+              </div>
             </div>
-            <div>Location: {job.location}</div>
-            <div>Tasks:</div>
-            <ul>
-              {job.tasks.map((task, index) => (
-                <li key={index}>{task}</li>
-              ))}
-            </ul>
-          </section>
+          </article>
         );
       })}
     </section>

@@ -1,0 +1,65 @@
+.experience__container {
+    display: grid;
+    width: 100%;
+    font-size: 14px;
+    grid-template-rows: repeat(3, auto);
+    grid-template-areas: "image" "job" "task";
+    line-height: 20px;
+    margin: 16px 0 16px 0;
+}
+
+.experience__container_img {
+    grid-area: image;
+    margin: 14px;
+}
+
+.experience__container-job {
+    grid-area: job;
+    letter-spacing: 1px;
+    font-weight: 500;
+    margin: 14px;
+}
+
+.experience__container-job a {
+    color: #e8e8e8;
+    text-decoration: none;
+}
+
+.experience__container-job a:hover {
+    color: #2a8eff;
+    text-decoration: underline;
+}
+
+.experience__container-task {
+    grid-area: task;
+    margin: 14px;
+}
+
+.experience__container_img figure {
+    margin: auto;
+}
+
+.experience__job-img {
+    background-color: #efefef;
+    border-radius: 8px;
+    object-fit: contain;
+    object-position: center center;
+    height: 200px;
+    width: 100%;
+}
+
+@media all and (min-width: 768px) {
+    .experience__container {
+        grid-template: auto / auto;
+        grid-template-areas: "image image" "job task";
+        width: 100%;
+    }
+}
+
+@media all and (min-width: 1024px) {
+    .experience__container {
+        grid-template: auto 80% / 40% 60%;
+        grid-template-areas: "image job" "image task";
+        width: 100%;
+    }
+}

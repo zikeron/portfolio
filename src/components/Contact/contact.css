@@ -1,0 +1,40 @@
+.contact__container {
+    display: grid;
+    font-weight: 500;
+    font-size: xx-large;
+    grid-template: auto /25% 25% 25% 25%;
+    grid-template-areas: ". image link ."  ;
+    margin: 48px 0 48px 0;
+    text-align: center;
+    width: 100%;
+}
+
+.contact__container-img {
+    grid-area: image;
+}
+
+.contact__container-img figure  {
+    margin: 0;
+}
+
+.contact__container-img figure img {
+    height: 60px;
+    border-radius: 50%;
+}
+
+.contact__container-link {
+    grid-area: link;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+}
+
+
+.contact__container-link a {
+    color: #e8e8e8;
+    text-decoration: none;
+}
+
+.contact__container-link a:hover {
+    text-decoration: underline;
+}

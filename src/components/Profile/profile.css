@@ -1,3 +1,10 @@
+.container {
+    display: grid;
+    grid-template: 15% 450px 15% 5%/ 10% 80% 10%;
+    grid-template-areas: ". . ." ". profile ." ". navigation ." ". footer .";
+    height: 100vh;
+}
+
 .profile {
     border-top: 2px solid #e8e8e8;
     border-bottom: 2px solid #e8e8e8;
@@ -37,14 +44,14 @@
     text-align: center;
 }
 
-@media only screen and (max-device-width: 450px) {
+@media only screen and (min-width: 450px) {
     .profile {
         margin: 0 auto;
         width: 85%;
     }
 }
 
-@media only screen and (min-device-width: 768px) {
+@media all and (min-width: 768px) {
     .profile__container p {
         font-size: 14px;
         font-weight: 300;
@@ -52,8 +59,4 @@
         padding: 12px;
         text-align: center;
     }
-}
-
-@media only screen and (min-device-width: 1024px) {
-
 }
