@@ -14,6 +14,8 @@ const experience = [
     location: 'Mexico City, Mexico',
     img: clarodriveImg,
     url: 'https://www.clarodrive.com/',
+    project: 'Clarodrive',
+    projectUrl: 'https://www.clarodrive.com/',
     tasks: [
       'Build APIs and Services using NodeJS and PHP with different frameworks such as Lumen, Slim, Codeigniter.',
       'Develop and support from many Angular v8 apps built in-house.',
@@ -60,10 +62,10 @@ const experience = [
 
 export const Experience = () => {
   return (
-    <section>
+    <>
       {experience.map(job => {
         return (
-          <article key={job.id}>
+          <section key={job.id}>
             <div className="experience__container">
               <div className="experience__container_img">
                 <figure>
@@ -78,6 +80,11 @@ export const Experience = () => {
                 <div>
                   Company: <a href={job.url}>{job.company}</a>
                 </div>
+                {job.project && (
+                  <div>
+                    Project: <a href={job.projectUrl}>{job.project}</a>
+                  </div>
+                )}
                 <div>Position: {job.position}</div>
                 <div>
                   Period: {job.startAt} -{' '}
@@ -94,9 +101,9 @@ export const Experience = () => {
                 </ul>
               </div>
             </div>
-          </article>
+          </section>
         );
       })}
-    </section>
+    </>
   );
 };

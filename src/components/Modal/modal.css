@@ -1,20 +1,34 @@
 .modal {
     background-color: rgba(0,0,0,0.95);
     box-sizing: border-box;
+    border-radius: 4px;
     display: block;
     color: #fff;
-    height: 90vh;
-    left: 0;
+    height: auto;
+    max-height: 90vh;
     margin: 0 auto;
-    position: fixed;
-    right: 0;
-    top: 5vh;
-    width: 90%;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+}
+
+.modal__fadein,
+.modal__fadeout {
+    opacity: 0;
+    transition: all .3s ease-out
+}
+
+.modal__fadein {
+    opacity: 1;
 }
 
 .modal__header {
     display: flex;
     background: linear-gradient(to bottom, #fff3 0.5%, #fff0 100%);
+    border-radius: 4px;
+    position: relative;
+    top: 0;
     justify-content: space-between;
 }
 
@@ -45,8 +59,12 @@
     box-sizing: border-box;
     font-weight: 100;
     padding: 24px;
-    height: 90%;
+    max-height: calc(744px - 85px);
     overflow-y: auto;
+}
+
+.modal__container::-webkit-scrollbar {
+    display: none !important;
 }
 
 @media all and (min-width: 768px) {

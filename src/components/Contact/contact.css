@@ -1,8 +1,7 @@
 .contact__container {
     display: grid;
     font-weight: 500;
-    font-size: xx-large;
-    grid-template: auto /25% 25% 25% 25%;
+    grid-template: auto /auto 25% 25% auto;
     grid-template-areas: ". image link ."  ;
     margin: 48px 0 48px 0;
     text-align: center;
@@ -23,9 +22,11 @@
 }
 
 .contact__container-link {
-    grid-area: link;
-    display: flex;
     align-items: center;
+    box-sizing: border-box;
+    display: flex;
+    font-size: xx-large;
+    grid-area: link;
     margin: 0 auto;
 }
 
@@ -37,4 +38,20 @@
 
 .contact__container-link a:hover {
     text-decoration: underline;
+}
+
+@media all and (max-width: 400px) {
+    .contact__container {
+        grid-template: auto / auto 30% 30% auto;
+        grid-template-areas: ". image link .";
+
+    }
+}
+
+@media all and (max-width: 768px) {
+    .contact__container {
+        grid-template: auto / auto 40% 40% auto;
+        grid-template-areas: ". image link .";
+
+    }
 }

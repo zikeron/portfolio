@@ -13,6 +13,7 @@ export const Layout = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [contentModal, setContentModal] = useState(false);
   const [headerContent, setHeaderContent] = useState(false);
+  const visible = isModalOpen ? 'container__hidden' : '';
 
   const renderContent = () => {
     switch (contentModal) {
@@ -34,7 +35,7 @@ export const Layout = () => {
           {renderContent()}
         </Modal>
       )}
-      <div className="container">
+      <div className={`container ${visible}`}>
         <div className="profile">
           <Profile />
         </div>
@@ -44,6 +45,7 @@ export const Layout = () => {
               modalOpen: () => setIsModalOpen(true),
               contentModal: setContentModal,
               headerContent: setHeaderContent,
+              isModalOpen,
             }}
           />
         </div>
