@@ -5,6 +5,13 @@
     height: 100vh;
 }
 
+.container__visible {
+    animation-name: crescendo;
+    animation-duration: 1.5s;
+    animation-direction: alternate;
+    animation-timing-function: linear;
+}
+
 .container__hidden {
     visibility: hidden;
 }
@@ -80,4 +87,12 @@
     100% {
         transform: scale(1);
     }
+}
+
+@keyframes crescendo {
+    0%   {transform: scale(.80);}
+    25%   {transform: scale(.95);}
+    50%   {transform: scale(1);}
+    50%   {transform: scale(1.05);}
+    100% {transform: scale(1);}
 }

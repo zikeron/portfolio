@@ -72,7 +72,7 @@ export const Experience = () => {
                   <img
                     className="experience__job-img"
                     src={job.img}
-                    alt="Clarodrive"
+                    alt={job.company}
                   />
                 </figure>
               </div>

@@ -13,7 +13,8 @@ export const Layout = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [contentModal, setContentModal] = useState(false);
   const [headerContent, setHeaderContent] = useState(false);
-  const visible = isModalOpen ? 'container__hidden' : '';
+  const [modalFadeClass, setModalFadeClass] = useState(true);
+  const [visible, setVisible] = useState('');
 
   const renderContent = () => {
     switch (contentModal) {
@@ -28,10 +29,28 @@ export const Layout = () => {
     }
   };
 
+  const handleCloseModal = () => {
+    setModalFadeClass(false);
+    setTimeout(() => {
+      setIsModalOpen(false);
+      setVisible('container__visible');
+    }, 400);
+  };
+
+  const handleOpenModal = () => {
+    setVisible('container__hidden');
+    setModalFadeClass(true);
+    setIsModalOpen(true);
+  };
+
   return (
     <section>
       {isModalOpen && (
-        <Modal name={headerContent} handleClick={() => setIsModalOpen(false)}>
+        <Modal
+          name={headerContent}
+          handleClick={handleCloseModal}
+          modalFadeClass={modalFadeClass}
+        >
           {renderContent()}
         </Modal>
       )}
@@ -42,7 +61,7 @@ export const Layout = () => {
         <div className="navigation">
           <Nav
             handlers={{
-              modalOpen: () => setIsModalOpen(true),
+              modalOpen: handleOpenModal,
               contentModal: setContentModal,
               headerContent: setHeaderContent,
               isModalOpen,

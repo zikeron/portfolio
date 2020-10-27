@@ -1,4 +1,5 @@
 .modal {
+    animation: show .7s ease;
     background-color: rgba(0,0,0,0.95);
     box-sizing: border-box;
     border-radius: 4px;
@@ -13,10 +14,12 @@
     transform:translate(-50%,-50%);
 }
 
-.modal__fadein,
+.modal__fadein {
+    animation: show .7s ease;
+}
+
 .modal__fadeout {
-    opacity: 0;
-    transition: all .3s ease-out
+    animation: vanished .7s ease;
 }
 
 .modal__fadein {
@@ -67,7 +70,36 @@
     display: none !important;
 }
 
-@media all and (min-width: 768px) {
+@keyframes show {
+0% {
+    display: none;
+    opacity: 0
+    }
+1% {
+    display: flex;
+    opacity: 0
+    }
+100% {opacity: 1}
+}
+
+@keyframes vanished {
+    0% {
+        opacity: 1
+    }
+    1% {
+        display: flex;
+        opacity: 1
+    }
+    100% {opacity: 0;  display: none;}
+}
+
+@media all and (min-width: 300px) and (max-width: 768px) {
+    .modal {
+        width: 80%;
+    }
+}
+
+@media all and (min-width: 768px) and (max-width: 1024px) {
     .modal {
         width: 80%;
     }

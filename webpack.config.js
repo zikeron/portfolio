@@ -1,12 +1,14 @@
 const path = require('path');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const WebpackPwaManifestPlugin = require('webpack-pwa-manifest');
 
 module.exports = {
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
+    publicPath: '/',
   },
   resolve: {
     extensions: ['.js', '.jsx'],
@@ -18,6 +20,9 @@ module.exports = {
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env', '@babel/preset-react'],
+          },
         },
       },
       {
@@ -29,19 +34,32 @@ module.exports = {
         ],
       },
       {
-        test: /\.css|.styl$/,
+        test: /\.(s*)css$/,
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
           },
           'css-loader',
-          'stylus-loader',
+          'sass-loader',
         ],
       },
       {
-        test: /\.(png|svg|jpg|gif)$/,
+        test: /\.(png|svg|jpg|gif|ico)$/,
         use: [
-          'file-loader',
+          {
+            loader: 'file-loader',
+            options: {
+              name: 'assets/[hash].[ext]',
+            },
+          },
+        ],
+      },
+      {
+        test: /\.(jpge)$/,
+        use: [
+          {
+            loader: 'url-loader',
+          },
         ],
       },
     ],
@@ -53,6 +71,19 @@ module.exports = {
     }),
     new MiniCssExtractPlugin({
       filename: 'assets/[name].css',
+    }),
+    new WebpackPwaManifestPlugin({
+      name: 'Zikeron',
+      short_name: 'Ziker',
+      description: 'Página personal de Alejandro Cortez',
+      background_color: '#fff',
+      theme_color: '#49a8de',
+      icons: [
+        {
+          src: path.resolve('src/assets/ziker.png'),
+          sizes: [16, 32, 48, 96, 144],
+        },
+      ],
     }),
   ],
 };

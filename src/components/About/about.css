@@ -1,3 +1,5 @@
 .container__about p {
-    text-align: justify-all;
+    letter-spacing: 1px;
+    line-height: 24px;
+    text-align: justify;
 }

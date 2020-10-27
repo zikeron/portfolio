@@ -5,7 +5,8 @@ export const Footer = () => {
   return (
     <div className="footer__container">
       <p>
-        MADE WITH ❤️ BY ALEJANDRO CORTEZ A.K.A ZIKER {new Date().getFullYear()}
+        {`MADE WITH `}❤️{` BY`} <b>ALEJANDRO CORTEZ</b> A.K.A <b>ZIKER</b>{' '}
+        {new Date().getFullYear()}
       </p>
     </div>
   );
