@@ -2,7 +2,7 @@
     display: grid;
     grid-template: 10% 65% 15% auto/1fr;
     grid-template-areas: "." "profile" "navigation" "footer";
-    height: 100vh;
+    height: 100%;
     width: 100%;
     overflow-x: hidden;
 }
