@@ -25,18 +25,14 @@
 
 @media all and (min-width: 400px) {
     .container {
-        display: grid;
         grid-template: 15% 450px 15% 5%/ 10% 80% 10%;
         grid-template-areas: ". . ." ". profile ." ". navigation ." ". footer .";
-        height: 100vh;
     }
 }
 
-@media all and (min-width: 1024px) {
+@media all and (min-width: 768px) {
     .container {
-        display: grid;
         grid-template: 15% 450px 15% 5%/15% 70% 15%;
         grid-template-areas: ". . ." ". profile ." ". navigation ." ". footer .";
-        height: 100vh;
     }
 }
