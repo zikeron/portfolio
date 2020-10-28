@@ -4,6 +4,12 @@
     box-sizing: border-box;
 }
 
+html {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
 body {
     background: #000000;
     color: #e8e8e8;
