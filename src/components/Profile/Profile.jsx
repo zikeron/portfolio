@@ -15,7 +15,7 @@ export const Profile = () => {
         <h1 className="profile__container-title">Alejandro Cortez</h1>
         <p>
           SOFTWARE ENGINEER. MASTER IN PROJECT MANAGEMENT. LOVER OF COFFEE AND
-          DEVELOPING.{' '}
+          SOFTWARE DEVELOPMENT.{' '}
         </p>
         <p>THINK THAT A PROBLEM IS POSSIBLE OPPORTUNITY.</p>
       </div>
