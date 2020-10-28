@@ -1,6 +1,6 @@
 .container {
     display: grid;
-    grid-template: 8% 450px 12% 5%/1fr;
+    grid-template: 15% 450px 12% 5%/1fr;
     grid-template-areas: "." "profile" "navigation" "footer";
     height: 100vh;
     width: 100%;
