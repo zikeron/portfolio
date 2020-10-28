@@ -50,7 +50,7 @@
 
 .profile__container p {
     animation-delay: 5s;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 300;
     letter-spacing: 1px;
     margin: 16px 0 16px 0;
@@ -58,10 +58,24 @@
     text-align: center;
 }
 
+@media only screen and (max-width: 320px) {
+    .profile__container p {
+        font-size: 12px;
+        padding: 9px;
+    }
+    .profile__container-title {
+        font-size: 40px;
+    }
+
+}
+
 @media only screen and (min-width: 450px) {
     .profile {
         margin: 0 auto;
         width: 85%;
+    }
+    .profile__container p {
+        font-size: 16px;
     }
 }
 

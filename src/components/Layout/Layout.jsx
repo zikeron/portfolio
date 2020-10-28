@@ -44,7 +44,7 @@ export const Layout = () => {
   };
 
   return (
-    <section>
+    <>
       {isModalOpen && (
         <Modal
           name={headerContent}
@@ -72,6 +72,6 @@ export const Layout = () => {
           <Footer />
         </div>
       </div>
-    </section>
+    </>
   );
 };
