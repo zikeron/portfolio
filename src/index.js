@@ -14,8 +14,8 @@ window.addEventListener('resize', () => {
 });
 
 render(
-  <BrowserRouter>
+  <React.StrictMode>
     <App />
-  </BrowserRouter>,
+  </React.StrictMode>,
   app
 );
