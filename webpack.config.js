@@ -80,7 +80,7 @@ module.exports = {
       theme_color: '#49a8de',
       icons: [
         {
-          src: path.resolve('src/assets/ziker.png'),
+          src: path.resolve('public/ziker.png'),
           sizes: [16, 32, 48, 96, 144],
         },
       ],
