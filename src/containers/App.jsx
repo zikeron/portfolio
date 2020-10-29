@@ -1,14 +1,14 @@
 import React from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Layout } from '../components/Layout/Layout';
 import './app.css';
 
 export const App = () => {
   return (
-    <BrowserRouter>
+    <Router>
       <Switch>
         <Route component={Layout} />
       </Switch>
-    </BrowserRouter>
+    </Router>
   );
 };
