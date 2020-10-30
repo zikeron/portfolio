@@ -1,4 +1,5 @@
 import React from 'react';
+import profileImg from '../../assets/profile/profile-bg.jpg';
 import './profile.css';
 
 export const Profile = () => {
@@ -10,7 +11,7 @@ export const Profile = () => {
             className="profile__img"
             height="150px"
             width="150px"
-            src="https://ziker.s3.us-east-2.amazonaws.com/10414522_10204423569851773_2141741865213452459_n.jpg"
+            src={profileImg}
             alt="profile picture"
           />
         </figure>

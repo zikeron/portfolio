@@ -19,8 +19,7 @@ body {
     width: 100vw;
 }
 
-#app {
-    background-image: url("https://ziker.s3.us-east-2.amazonaws.com/bg-zikeron.jpeg");
+#app > div {
     background-position-x: center;
     background-position-y: center;
     background-repeat: no-repeat;

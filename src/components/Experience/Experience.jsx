@@ -1,7 +1,7 @@
 import React from 'react';
-import clarodriveImg from '../../assets/clarodrive.png';
-import telasistImg from '../../assets/telasist.png';
-import ikeImg from '../../assets/ike-asistencia.png';
+import clarodriveImg from '../../assets/experience/clarodrive.png';
+import telasistImg from '../../assets/experience/telasist.png';
+import ikeImg from '../../assets/experience/ike-asistencia.png';
 import './experience.css';
 
 const experience = [

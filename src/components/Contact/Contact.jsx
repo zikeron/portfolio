@@ -1,7 +1,7 @@
 import React from 'react';
-import linkedInLogo from '../../assets/contact-linkedin.png';
-import githubLogo from '../../assets/contact-github.png';
-import twitterLogo from '../../assets/contact-twitter.png';
+import linkedInLogo from '../../assets/contact/contact-linkedin.png';
+import githubLogo from '../../assets/contact/contact-github.png';
+import twitterLogo from '../../assets/contact/contact-twitter.png';
 import './contact.css';
 
 const contacts = [

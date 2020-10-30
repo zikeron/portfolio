@@ -6,19 +6,22 @@ import {
   Redirect,
 } from 'react-router-dom';
 import { Layout } from '../components/Layout/Layout';
+import bgImg from '../assets/bg-zikeron.jpeg';
 import './app.css';
 
 export const App = () => {
   return (
-    <Suspense fallback={<div></div>}>
-      <Router>
-        <Switch>
-          <Route exact path="/" component={Layout} />
-          <Route>
-            <Redirect to="/" />
-          </Route>
-        </Switch>
-      </Router>
-    </Suspense>
+    <div style={{ backgroundImage: `url(${bgImg})` }}>
+      <Suspense fallback={<div></div>}>
+        <Router>
+          <Switch>
+            <Route exact path="/" component={Layout} />
+            <Route>
+              <Redirect to="/" />
+            </Route>
+          </Switch>
+        </Router>
+      </Suspense>
+    </div>
   );
 };
