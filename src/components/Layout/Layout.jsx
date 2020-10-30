@@ -10,7 +10,7 @@ import './layout.css';
 
 const Skills = React.lazy(() => import('../Skills/Skills'));
 
-export const Layout = () => {
+const Template = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [contentModal, setContentModal] = useState(false);
   const [headerContent, setHeaderContent] = useState(false);
@@ -79,3 +79,7 @@ export const Layout = () => {
     </>
   );
 };
+
+export const Layout = React.memo(Template, (prevProps, props) => {
+  return prevProps === props;
+});

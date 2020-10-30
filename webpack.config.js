@@ -3,13 +3,46 @@ const HtmlWebPackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const WebpackPwaManifestPlugin = require('webpack-pwa-manifest');
 const RobotstxtPlugin = require('robotstxt-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
+const { GenerateSW } = require('workbox-webpack-plugin');
 
 module.exports = {
+  devtool: 'hidden-source-map',
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js',
+    filename: './bundle-[name]-[hash].mjs',
     publicPath: '/',
+  },
+  optimization: {
+    splitChunks: {
+      chunks: 'async',
+      name: true,
+      cacheGroups: {
+        vendors: {
+          name: 'vendors',
+          chunks: 'all',
+          reuseExistingChunk: true,
+          priority: 1,
+          filename: 'vendor-[hash].js',
+          enforce: true,
+          test(module, chunks) {
+            const name = module.nameForCondition && module.nameForCondition();
+            return chunks.some(
+              chunk =>
+                chunk.name !== 'vendor' && /[\\/]node_modules[\\/]/.test(name)
+            );
+          },
+        },
+      },
+    },
+    minimize: false,
+    minimizer: [new TerserPlugin()],
+  },
+  performance: {
+    hints: false,
+    maxEntrypointSize: 512000,
+    maxAssetSize: 512000,
   },
   resolve: {
     extensions: ['.js', '.jsx'],
@@ -17,12 +50,30 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
+        test: /\.(mjs|js|jsx)$/,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env', '@babel/preset-react'],
+            presets: [
+              '@babel/preset-react',
+              [
+                '@babel/preset-env',
+                {
+                  modules: false,
+                  useBuiltIns: 'entry',
+                  targets: {
+                    browsers: [
+                      'Chrome >= 60',
+                      'Safari >= 10.1',
+                      'iOS >= 10.3',
+                      'Firefox >= 54',
+                      'Edge >= 15',
+                    ],
+                  },
+                },
+              ],
+            ],
           },
         },
       },
@@ -69,6 +120,7 @@ module.exports = {
     new HtmlWebPackPlugin({
       template: './public/index.html',
       filename: './index.html',
+      favicon: './public/ziker.png',
     }),
     new MiniCssExtractPlugin({
       filename: 'assets/[name].css',
@@ -82,7 +134,12 @@ module.exports = {
       icons: [
         {
           src: path.resolve('public/ziker.png'),
-          sizes: [16, 32, 48, 96, 144],
+          sizes: [16, 32, 48, 96, 114, 120, 144, 512, 180],
+        },
+        {
+          src: path.resolve('public/ziker.png'),
+          size: '1024x1024',
+          purpose: 'maskable',
         },
       ],
     }),
@@ -104,10 +161,18 @@ module.exports = {
       ],
       host: 'http://zikeron.com',
     }),
+    new GenerateSW({
+      clientsClaim: true,
+      skipWaiting: true,
+      runtimeCaching: [
+        {
+          urlPattern: new RegExp(/.(?:png|jpg|jpeg|svg)$/),
+          handler: 'CacheFirst',
+          options: {
+            cacheName: 'images',
+          },
+        },
+      ],
+    }),
   ],
-  devServer: {
-    historyApiFallback: true,
-    contentBase: './',
-    hot: true,
-  },
 };
