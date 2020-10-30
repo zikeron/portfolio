@@ -8,6 +8,8 @@ export const Profile = () => {
         <figure>
           <img
             className="profile__img"
+            height="150px"
+            width="150px"
             src="https://ziker.s3.us-east-2.amazonaws.com/10414522_10204423569851773_2141741865213452459_n.jpg"
             alt="profile picture"
           />

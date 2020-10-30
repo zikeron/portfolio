@@ -178,7 +178,7 @@ const skills = [
   },
 ];
 
-export const Skills = () => {
+export default () => {
   return (
     <section>
       <div className="skills__container">
@@ -186,7 +186,12 @@ export const Skills = () => {
           return (
             <div className="skills__image-container" key={skill.id}>
               <figure className="skills__figure">
-                <img src={skill.src} alt={skill.name} />
+                <img
+                  src={skill.src}
+                  alt={skill.name}
+                  height="50px"
+                  width="50px"
+                />
                 <p className="skills__image-label">{skill.name}</p>
               </figure>
             </div>

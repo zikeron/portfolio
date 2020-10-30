@@ -44,8 +44,6 @@
     border-radius: 8px;
     object-fit: contain;
     object-position: center center;
-    height: 200px;
-    width: 100%;
 }
 
 @media all and (min-width: 768px) {

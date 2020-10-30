@@ -1,13 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, Suspense } from 'react';
 import { Modal } from '../Modal/Modal';
 import { Profile } from '../Profile/Profile';
 import { Nav } from '../Nav/Nav';
 import { Footer } from '../Footer/Footer';
 import { About } from '../About/About';
-import { Skills } from '../Skills/Skills';
 import { Experience } from '../Experience/Experience';
 import { Contact } from '../Contact/Contact';
 import './layout.css';
+
+const Skills = React.lazy(() => import('../Skills/Skills'));
 
 export const Layout = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -17,15 +18,18 @@ export const Layout = () => {
   const [visible, setVisible] = useState('');
 
   const renderContent = () => {
-    switch (contentModal) {
-      case 'About':
-        return <About />;
-      case 'Skills':
-        return <Skills />;
-      case 'Experience':
-        return <Experience />;
-      case 'Contact':
-        return <Contact />;
+    if (contentModal === 'About') {
+      return <About />;
+    } else if (contentModal === 'Skills') {
+      return (
+        <Suspense>
+          <Skills />
+        </Suspense>
+      );
+    } else if (contentModal === 'Experience') {
+      return <Experience />;
+    } else if (contentModal === 'Contact') {
+      return <Contact />;
     }
   };
 

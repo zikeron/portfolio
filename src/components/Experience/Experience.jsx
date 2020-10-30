@@ -73,6 +73,8 @@ export const Experience = () => {
                     className="experience__job-img"
                     src={job.img}
                     alt={job.company}
+                    height="200px"
+                    width="100%"
                   />
                 </figure>
               </div>

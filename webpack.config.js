@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const WebpackPwaManifestPlugin = require('webpack-pwa-manifest');
+const RobotstxtPlugin = require('robotstxt-webpack-plugin');
 
 module.exports = {
   entry: './src/index.js',
@@ -77,7 +78,7 @@ module.exports = {
       short_name: 'Ziker',
       description: 'Página personal de Alejandro Cortez',
       background_color: '#fff',
-      theme_color: '#49a8de',
+      theme_color: '#1c2b2f',
       icons: [
         {
           src: path.resolve('public/ziker.png'),
@@ -85,10 +86,28 @@ module.exports = {
         },
       ],
     }),
+    new RobotstxtPlugin({
+      policy: [
+        {
+          userAgent: 'Googlebot',
+          allow: '/',
+        },
+        {
+          userAgent: '*',
+          allow: '/',
+        },
+        {
+          userAgent: 'Googlebot-Image',
+          allow: '/',
+          disallow: ['/*.jpeg$', '/*.png$', '/*.icon$', '/*.jpg$'],
+        },
+      ],
+      host: 'http://zikeron.com',
+    }),
   ],
   devServer: {
     historyApiFallback: true,
     contentBase: './',
-    hot: true
+    hot: true,
   },
 };

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import {
   BrowserRouter as Router,
   Route,
@@ -10,13 +10,15 @@ import './app.css';
 
 export const App = () => {
   return (
-    <Router>
-      <Switch>
-        <Route exact path="/" component={Layout} />
-        <Route>
-          <Redirect to="/" />
-        </Route>
-      </Switch>
-    </Router>
+    <Suspense fallback={<div></div>}>
+      <Router>
+        <Switch>
+          <Route exact path="/" component={Layout} />
+          <Route>
+            <Redirect to="/" />
+          </Route>
+        </Switch>
+      </Router>
+    </Suspense>
   );
 };

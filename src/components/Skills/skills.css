@@ -14,14 +14,12 @@
     background-color: #efefef;
     border-radius: 50%;
     border: 4px solid rgb(218,165,32);
-    height: 50px;
     margin: 22px;
     object-fit: cover;
     object-position: center center;
     padding: 4px;
     transform-style: preserve-3d;
     transition: all 1s ease-in-out;
-    width: 50px;
 }
 
 .skills__figure p {
