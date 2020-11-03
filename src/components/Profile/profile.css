@@ -27,7 +27,7 @@
     align-content: center;
 }
 
-.profile__container figure {
+.profile__container picture {
     display: flex;
     justify-content: center;
 }

@@ -1,12 +1,15 @@
 import React from 'react';
 import profileImg from '../../assets/profile/profile-bg.jpg';
+import profileWebp from '../../assets/profile/profile-bg.webp';
 import './profile.css';
 
 export const Profile = () => {
   return (
     <section>
       <div className="profile__container">
-        <figure>
+        <picture>
+          <source type="image/webp" srcSet={profileWebp} />
+          <source type="image/jpg" srcSet={profileImg} />
           <img
             className="profile__img"
             height="150px"
@@ -14,7 +17,7 @@ export const Profile = () => {
             src={profileImg}
             alt="profile picture"
           />
-        </figure>
+        </picture>
         <h1 className="profile__container-title">Alejandro Cortez</h1>
         <p>
           SOFTWARE ENGINEER. MASTER IN PROJECT MANAGEMENT. LOVER OF COFFEE AND
