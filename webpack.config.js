@@ -134,7 +134,7 @@ module.exports = {
       icons: [
         {
           src: path.resolve('public/ziker.png'),
-          sizes: [16, 32, 48, 96, 114, 120, 144, 512, 180],
+          sizes: [16, 32, 48, 96, 114, 120, 144, 192, 512, 180],
         },
         {
           src: path.resolve('public/ziker.png'),
