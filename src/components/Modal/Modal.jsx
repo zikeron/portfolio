@@ -1,12 +1,7 @@
 import React, { useState } from 'react';
 import './modal.css';
 
-export const Modal = ({
-  name = 'modal',
-  children,
-  handleClick,
-  modalFadeClass,
-}) => {
+export default ({ name = 'modal', children, handleClick, modalFadeClass }) => {
   return (
     <div
       className={`modal ${

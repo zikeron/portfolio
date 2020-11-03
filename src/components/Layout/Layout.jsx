@@ -1,14 +1,15 @@
 import React, { useState, Suspense } from 'react';
-import { Modal } from '../Modal/Modal';
 import { Profile } from '../Profile/Profile';
 import { Nav } from '../Nav/Nav';
 import { Footer } from '../Footer/Footer';
-import { About } from '../About/About';
-import { Experience } from '../Experience/Experience';
-import { Contact } from '../Contact/Contact';
+
 import './layout.css';
 
+const Modal = React.lazy(() => import('../Modal/Modal'));
+const About = React.lazy(() => import('../About/About'));
 const Skills = React.lazy(() => import('../Skills/Skills'));
+const Experience = React.lazy(() => import('../Experience/Experience'));
+const Contact = React.lazy(() => import('../Contact/Contact'));
 
 const Template = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -18,17 +19,13 @@ const Template = () => {
   const [visible, setVisible] = useState('');
 
   const renderContent = () => {
-    if (contentModal === 'About') {
+    if ('About' === contentModal) {
       return <About />;
-    } else if (contentModal === 'Skills') {
-      return (
-        <Suspense>
-          <Skills />
-        </Suspense>
-      );
-    } else if (contentModal === 'Experience') {
+    } else if ('Skills' === contentModal) {
+      return <Skills />;
+    } else if ('Experience' === contentModal) {
       return <Experience />;
-    } else if (contentModal === 'Contact') {
+    } else if ('Contact' === contentModal) {
       return <Contact />;
     }
   };
@@ -55,7 +52,7 @@ const Template = () => {
           handleClick={handleCloseModal}
           modalFadeClass={modalFadeClass}
         >
-          {renderContent()}
+          <Suspense>{renderContent()}</Suspense>
         </Modal>
       )}
       <div className={`container ${visible}`}>

@@ -25,7 +25,7 @@ const contacts = [
   },
 ];
 
-export const Contact = () => {
+export default () => {
   return (
     <article>
       {contacts.map(contact => {

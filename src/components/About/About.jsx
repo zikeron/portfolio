@@ -1,7 +1,7 @@
 import React from 'react';
 import './about.css';
 
-export const About = () => {
+export default () => {
   return (
     <section>
       <div className="container__about">

@@ -60,7 +60,7 @@ const experience = [
   },
 ];
 
-export const Experience = () => {
+export default () => {
   return (
     <>
       {experience.map(job => {

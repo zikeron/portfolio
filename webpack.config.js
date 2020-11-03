@@ -11,13 +11,19 @@ module.exports = {
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: './bundle-[name]-[hash].mjs',
+    filename: 'bundle-[name]-[hash].mjs',
     publicPath: '/',
   },
   optimization: {
     splitChunks: {
       chunks: 'async',
-      name: true,
+      minSize: 20000,
+      minRemainingSize: 0,
+      maxSize: 0,
+      minChunks: 1,
+      maxAsyncRequests: 30,
+      maxInitialRequests: 30,
+      automaticNameDelimiter: '~',
       cacheGroups: {
         vendors: {
           name: 'vendors',
@@ -26,17 +32,11 @@ module.exports = {
           priority: 1,
           filename: 'vendor-[hash].js',
           enforce: true,
-          test(module, chunks) {
-            const name = module.nameForCondition && module.nameForCondition();
-            return chunks.some(
-              chunk =>
-                chunk.name !== 'vendor' && /[\\/]node_modules[\\/]/.test(name)
-            );
-          },
+          test: /[\\/]node_modules[\\/]/,
         },
       },
     },
-    minimize: false,
+    minimize: true,
     minimizer: [new TerserPlugin()],
   },
   performance: {
