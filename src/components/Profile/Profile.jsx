@@ -1,6 +1,6 @@
 import React from 'react';
-import profileImg from '../../assets/profile/profile-bg.jpg';
-import profileWebp from '../../assets/profile/profile-bg.webp';
+import profileImg from '../../assets/profile/profile.jpg';
+import profileWebp from '../../assets/profile/profile.webp';
 import './profile.css';
 
 export const Profile = () => {
