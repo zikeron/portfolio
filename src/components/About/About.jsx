@@ -8,11 +8,11 @@ export default () => {
         <p> Hi there 👋 </p>
         <p>
           {' '}
-          I'm Alejandro, Full-Stack developer with 6 years of experience in web
-          application development using PHP & NodeJS language to develop
-          back-end and 3 years of experience in the front-end, using
-          technologies such as Angular, Vue JS, React. Currently, I am looking
-          for job opportunities that will support me in continuing my
+          I'm Alejandro, a Full-Stack developer with six years of experience in web
+          application development using PHP & NodeJS language to develop in
+          the back-end. Also, I've had experience in the front-end, using
+          technologies such as Angular, Vue JS, and React. Consistently, I am looking
+          for new opportunities that will support me in continuing my
           professional growth.
         </p>
       </div>
