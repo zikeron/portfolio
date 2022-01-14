@@ -44,7 +44,7 @@ module.exports = {
         ],
       },
       {
-        test: /\.(png|svg|jpg|gif|ico)$/,
+        test: /\.(png|svg|jpg|gif|ico|webp)$/,
         use: [
           {
             loader: 'file-loader',
@@ -83,7 +83,7 @@ module.exports = {
       skipWaiting: true,
       runtimeCaching: [
         {
-          urlPattern: new RegExp(/.(?:png|jpg|jpeg|svg)$/),
+          urlPattern: new RegExp(/.(?:png|jpg|jpeg|svg|webp)$/),
           handler: 'CacheFirst',
           options: {
             cacheName: 'images',

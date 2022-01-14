@@ -166,7 +166,7 @@ module.exports = {
       skipWaiting: true,
       runtimeCaching: [
         {
-          urlPattern: new RegExp(/.(?:png|jpg|jpeg|svg)$/),
+          urlPattern: new RegExp(/.(?:png|jpg|jpeg|svg|webp)$/),
           handler: 'CacheFirst',
           options: {
             cacheName: 'images',

@@ -2,15 +2,37 @@ import React from 'react';
 import clarodriveImg from '../../assets/experience/clarodrive.png';
 import telasistImg from '../../assets/experience/telasist.png';
 import ikeImg from '../../assets/experience/ike-asistencia.png';
+import AspImg from '../../assets/experience/aspiration.png';
 import './experience.css';
 
 const experience = [
+  {
+    id: 0,
+    position: 'Senior UI Frontend Developer',
+    company: 'Noblesoft',
+    startAt: '01/2021',
+    endAt: '',
+    location: 'California, USA',
+    img: AspImg,
+    url: 'https://www.aspiration.com/',
+    project: 'Aspiration',
+    projectUrl: 'https://www.aspiration.com/',
+    tasks: [
+      'Ensure cross-device and cross-platform compatibility.',
+      'Fetch data from the backend using GraphQL.',
+      'Responsible for styling and the look and feel of the web components using styled-component, and styled-system.',
+      'Implemented ReactNative DevTools and Reactotron for debugging, testing, and optimization.',
+      'Used Postman to test all endpoints from API’s to check consistency in their responses.',
+      'All elements on the app were created based on Atomic Design methodology and implemented on the Storybook tool to maintain the modularity and be reusable in different app scenarios.',
+      'Manage the templates information using Formik library.',
+    ],
+  },
   {
     id: 1,
     position: 'Full-Stack Developer',
     company: 'Ironbit',
     startAt: '08/2018',
-    endAt: '',
+    endAt: '12/2020',
     location: 'Mexico City, Mexico',
     img: clarodriveImg,
     url: 'https://www.clarodrive.com/',
